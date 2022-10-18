@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="bg-gray-800 text-gray-100 pt-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center gap-y-6">
+
+        {{ range .Pages }}
+        <div class="max-w-lg p-4 shadow-md bg-yellow-900 dark:text-gray-100">
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <img src="{{.Params.Featured_Image}}" alt="No images found" class="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500">
+                    <div class="flex items-center text-xs">
+                        <span>{{.Date.Format "2006-01-02"}}</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <a rel="noopener noreferrer" href="{{.Permalink}}" class="block">
+                        <h3 class="text-xl font-semibold dark:text-violet-400">{{.Title}}</h3>
+                    </a>
+                    <p class="leading-snug dark:text-gray-400">{{ .Content | safeHTML | truncate 50 }}</p>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,23 @@
+{{ define "title" }}
+  {{ .Title }}  
+{{ end }}
+
+
+{{ define "main" }}
+<div class="w-full bg-gray-800">
+    <article class="max-w-2xl px-6 py-24 mx-auto space-y-16 bg-gray-800 text-gray-50">
+        <div class="flex flex-wrap space-x-2 text-sm text-gray-400">
+            <p class="text-sm text-gray-400">by
+                <a href="#" target="_blank" rel="noopener noreferrer" class="hover:underline text-violet-400">
+                    <span>Arka Pratim Chaudhuri</span>
+                </a>on
+                <time datetime="2021-02-12 15:34:18-0200">{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+            </p>
+    
+        </div>
+        <div class="text-gray-100 text-2xl main-content">
+            <p>{{ .Content }}</p>
+        </div>    
+    </article>
+</div>
+{{ end }}
